@@ -1,3 +1,4 @@
-class Mang < ActiveRecord::Base
+class Mang
+  include Mongoid::Document
   include DeviseTokenAuth::Concerns::User
 end

@@ -1,7 +1,51 @@
-class User < ActiveRecord::Base
+class User
+  include Mongoid::Document
+  #include Mongoid::Locker
   include DeviseTokenAuth::Concerns::User
 
+  field :email, type: String
+  field :encrypted_password, type: String, default: ''
+
+  ## Recoverable
+  field :reset_password_token, type: String
+  field :reset_password_sent_at, type: Time
+
+  ## Rememberable
+  field :remember_created_at, type: Time
+
+  ## Trackable
+  field :sign_in_count, type: Integer, default: 0
+  field :current_sign_in_at, type: Time
+  field :last_sign_in_at, type: Time
+  field :current_sign_in_ip, type: String
+  field :last_sign_in_ip, type: String
+
+  ## Confirmable
+  field :confirmation_token, type: String
+  field :confirmed_at, type: Time
+  field :confirmation_sent_at, type: Time
+  field :unconfirmed_email, type: String
+
+  ## User Info
+  field :name, type: String
+  field :nickname, type: String
+  field :image, type: String
+
+  ## unique oauth id
+  field :provider, type: String
+  field :uid, default: ""
+
+  ## Tokens
+  field :tokens, type: Hash, default: { }
+
+  ## Index
+  index({email: 1, uid: 1, reset_password_token: 1}, {unique: true})
+
+  ## Validation
+  validates_uniqueness_of :email, :uid
+
   #validate :ensure_allowed_favorite_color
+  field :favorite_color, type: String
 
   def ensure_allowed_favorite_color
     if favorite_color and favorite_color != ""

@@ -1,10 +1,11 @@
 GIT
   remote: /Users/ybian/src/devise_token_auth
-  revision: 2d3595d405b743dfa6cfd90348f311330c82b5df
-  branch: master
+  revision: 4bd56279abe409849a04ead4ce82c07349a2016e
+  branch: mongoid
   specs:
     devise_token_auth (0.1.30.beta3)
-      devise (~> 3.3)
+      devise (~> 3.4.1)
+      mongoid-locker (~> 0.3.0)
       rails (~> 4.1)
 
 GIT
@@ -17,23 +18,23 @@ GIT
 
 GIT
   remote: git://github.com/laserlemon/figaro.git
-  revision: ae200e44e8f2770ce1037753865985b02ee0048f
+  revision: 5720b12ca2b086ee5f0a9f4267b11b7753c67d21
   specs:
-    figaro (1.0.0.rc1)
+    figaro (1.0.0)
       thor (~> 0.14)
 
 GIT
   remote: git://github.com/mkdynamic/omniauth-facebook.git
-  revision: 4dbd5f0f40df0366ac6f9b477cfb8e22b4154341
+  revision: ee4fb4dd6f664b3223974c229fda36169309e9ec
   specs:
-    omniauth-facebook (2.0.0.pre1)
-      omniauth-oauth2 (~> 1.1)
+    omniauth-facebook (2.0.0)
+      omniauth-oauth2 (~> 1.2)
 
 GIT
   remote: git://github.com/zquestz/omniauth-google-oauth2.git
-  revision: 15f2fc1178c49d148db466ca5b0c77cf8b29f447
+  revision: fa92a6e3e18e97af324af09b7313d435d6cf0c4a
   specs:
-    omniauth-google-oauth2 (0.2.5)
+    omniauth-google-oauth2 (0.2.6)
       omniauth (> 1.0)
       omniauth-oauth2 (~> 1.1)
 
@@ -68,6 +69,7 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
+    bson (2.3.0)
     builder (3.2.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -76,7 +78,8 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.7.1)
+    coffee-script-source (1.8.0)
+    connection_pool (2.0.0)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -85,17 +88,17 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    execjs (2.2.1)
+    execjs (2.2.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     fuzz_ball (0.9.1)
-    hashie (3.2.0)
+    hashie (3.3.1)
     hike (1.2.3)
     i18n (0.6.11)
-    jbuilder (2.1.3)
+    jbuilder (2.2.4)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-rails (3.1.1)
+    jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
@@ -105,7 +108,18 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
-    minitest (5.4.0)
+    minitest (5.4.2)
+    mongoid (4.0.0)
+      activemodel (~> 4.0)
+      moped (~> 2.0.0)
+      origin (~> 2.1)
+      tzinfo (>= 0.3.37)
+    mongoid-locker (0.3.0)
+      mongoid (~> 4.0)
+    moped (2.0.1)
+      bson (~> 2.2)
+      connection_pool (~> 2.0)
+      optionable (~> 0.2.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -123,6 +137,8 @@ GEM
       multi_json (~> 1.3)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    optionable (0.2.0)
+    origin (2.1.1)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
     pry (0.10.1)
@@ -146,7 +162,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.4)
       sprockets-rails (~> 2.0)
-    rails_12factor (0.0.2)
+    rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.2)
@@ -157,42 +173,41 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
-    rdoc (4.1.1)
+    rdoc (4.1.2)
       json (~> 1.4)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
     sass (3.2.19)
-    sass-rails (4.0.3)
+    sass-rails (4.0.4)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.0)
-      sprockets (~> 2.8, <= 2.11.0)
+      sass (~> 3.2.2)
+      sprockets (~> 2.8, < 2.12)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.0)
-      json (~> 1.8)
-      rdoc (~> 4.0, < 5.0)
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
     slop (3.6.0)
     spring (1.1.3)
-    sprockets (2.11.0)
+    sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.3)
+    sprockets-rails (2.2.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
-      sprockets (~> 2.8)
-    sqlite3 (1.3.10)
+      sprockets (>= 2.8, < 4.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.2)
+    turbolinks (2.5.1)
       coffee-rails
-    tzinfo (1.2.1)
+    tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.5.1)
+    uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
@@ -208,6 +223,7 @@ DEPENDENCIES
   fuzz_ball
   jbuilder (~> 2.0)
   jquery-rails
+  mongoid (~> 4.0.0)
   omniauth-facebook!
   omniauth-github!
   omniauth-google-oauth2!
@@ -218,6 +234,5 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
-  sqlite3
   turbolinks
   uglifier (>= 1.3.0)
