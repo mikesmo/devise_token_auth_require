@@ -1,6 +1,9 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
+    "requirejs": "latest",
+    "jquery": "latest",
+    "domReady": "latest",
     "ng-token-auth": "latest"
   }
 }

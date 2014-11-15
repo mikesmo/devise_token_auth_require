@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require angular/angular
-//= require angular-cookies/angular-cookies
-//= require ng-token-auth/dist/ng-token-auth
-//= require_tree .
+// require angular/angular
+// require angular-cookies/angular-cookies
+// require ng-token-auth/dist/ng-token-auth
+// require_tree .

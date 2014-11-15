@@ -1,1 +1,4 @@
+asset "requirejs"
+asset "jquery"
+asset "domReady"
 asset 'ng-token-auth'
