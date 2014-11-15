@@ -45,3 +45,5 @@ gem "pry-remote", group: :development
 
 # heroku
 gem 'rails_12factor', group: :production
+
+gem "bower-rails"
