@@ -1,14 +1,4 @@
 GIT
-  remote: /Users/ybian/src/devise_token_auth
-  revision: 4bd56279abe409849a04ead4ce82c07349a2016e
-  branch: mongoid
-  specs:
-    devise_token_auth (0.1.30.beta3)
-      devise (~> 3.4.1)
-      mongoid-locker (~> 0.3.0)
-      rails (~> 4.1)
-
-GIT
   remote: git://github.com/intridea/omniauth-github.git
   revision: 21fa5e1a7295a11eae42846690b1eee88e57c23a
   specs:
@@ -29,6 +19,16 @@ GIT
   specs:
     omniauth-facebook (2.0.0)
       omniauth-oauth2 (~> 1.2)
+
+GIT
+  remote: git://github.com/ybian/devise_token_auth.git
+  revision: 703a511a3a9b327c90d6abb508fbba328e7fb9b2
+  branch: mongoid
+  specs:
+    devise_token_auth (0.1.30.beta3)
+      devise (~> 3.4.1)
+      mongoid-locker (~> 0.3.0)
+      rails (~> 4.1)
 
 GIT
   remote: git://github.com/zquestz/omniauth-google-oauth2.git
@@ -175,7 +175,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
-    responders (1.1.1)
+    responders (1.1.2)
       railties (>= 3.2, < 4.2)
     sass (3.2.19)
     sass-rails (4.0.4)
