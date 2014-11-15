@@ -47,3 +47,6 @@ gem "pry-remote", group: :development
 gem 'rails_12factor', group: :production
 
 gem "bower-rails"
+
+gem "mailcatcher" # email mock
+
